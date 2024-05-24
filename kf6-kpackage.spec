@@ -34,6 +34,7 @@ Requires:	kf6-dirs
 Requires:	kf6-karchive >= %{version}
 Requires:	kf6-kcoreaddons >= %{version}
 Requires:	kf6-ki18n >= %{version}
+Obsoletes:	kf5-%{kfname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt6dir		%{_libdir}/qt6
@@ -47,6 +48,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	kf6-kcoreaddons-devel >= %{version}
+Obsoletes:	kf5-%{kfname}-devel < %{version}
 
 %description devel
 Header files for %{kfname} development.
