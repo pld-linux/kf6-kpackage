@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.10
+%define		kdeframever	6.11
 %define		qtver		5.15.2
 %define		kfname		kpackage
 
 Summary:	Library to load and install packages as plugins
 Name:		kf6-%{kfname}
-Version:	6.10.0
+Version:	6.11.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	665d1d10ff9ff1fc7a1117e2c2744ad7
+# Source0-md5:	772720c4f1b51589abd1964750ef96e6
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
