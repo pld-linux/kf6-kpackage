@@ -8,11 +8,12 @@
 Summary:	Library to load and install packages as plugins
 Name:		kf6-%{kfname}
 Version:	6.18.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
 # Source0-md5:	5e89555fa86f15f72ce3b2786f03a2b5
+Patch0:		metadata.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
@@ -59,6 +60,7 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 
 %prep
 %setup -q -n %{kfname}-%{version}
+%patch -P0 -p1
 
 %build
 %cmake -B build \
