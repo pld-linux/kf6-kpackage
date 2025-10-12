@@ -1,6 +1,6 @@
-diff -up kpackage-6.18.0/KF6PackageMacros.cmake.orig kpackage-6.18.0/KF6PackageMacros.cmake
---- kpackage-6.18.0/KF6PackageMacros.cmake.orig	2025-09-08 10:14:03.000000000 +0200
-+++ kpackage-6.18.0/KF6PackageMacros.cmake	2025-10-08 18:36:45.125468942 +0200
+diff -up kpackage-6.19.0/KF6PackageMacros.cmake.orig kpackage-6.19.0/KF6PackageMacros.cmake
+--- kpackage-6.19.0/KF6PackageMacros.cmake.orig	2025-10-05 14:38:14.000000000 +0200
++++ kpackage-6.19.0/KF6PackageMacros.cmake	2025-10-12 12:52:27.847751776 +0200
 @@ -50,9 +50,9 @@ function(kpackage_install_package dir co
              PATTERN CMakeLists.txt EXCLUDE
              PATTERN Messages.sh EXCLUDE
@@ -8,8 +8,16 @@ diff -up kpackage-6.18.0/KF6PackageMacros.cmake.orig kpackage-6.18.0/KF6PackageM
 -endfunction()
 +#endfunction()
  
--function(kpackage_generate_appstream_metadata component)
-+#function(kpackage_generate_appstream_metadata component)
+-function(kpackage_generate_appstream_metadata dir component)
++#function(kpackage_generate_appstream_metadata dir component)
     get_target_property(kpackagetool_cmd KF6::kpackagetool6 LOCATION)
     if (${component} MATCHES "^.+\\..+\\." AND NOT SKIP_APPSTREAM) #we make sure there's at least 2 dots
          set(APPDATAFILE "${CMAKE_CURRENT_BINARY_DIR}/${component}.appdata.xml")
+@@ -72,6 +72,6 @@ function(kpackage_generate_appstream_met
+             install(FILES ${APPDATAFILE} DESTINATION ${KDE_INSTALL_METAINFODIR} OPTIONAL)
+         endif()
+    else()
+-        message(FATAL_ERROR "KPackage components must be specified in reverse domain notation for appstream generation.")
++        message(DEBUG "KPackage components must be specified in reverse domain notation for appstream generation.")
+    endif()
+ endfunction()
