@@ -44,6 +44,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Library to load and install packages as plugins.
 
+%description -l pl.UTF-8
+Biblioteka do ładowania pakietów jako wtyczki.
+
 %package devel
 Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
